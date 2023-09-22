@@ -8,7 +8,7 @@ from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
 from google.oauth2 import service_account
 
 SCOPES = ['https://www.googleapis.com/auth/sqlservice.admin']
-SERVICE_ACCOUNT_FILE = '/path/to/service.json'
+SERVICE_ACCOUNT_FILE = '../credentials/fiery-protocol-399500-f2566dd92ef4.json'
 
 credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -63,7 +63,7 @@ def gd_to_gcs():
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
-			drive_id=MY_FOLDER_ID,
+			drive_id='None',
 			gcp_conn_id=GCPCONN
 		)
 
