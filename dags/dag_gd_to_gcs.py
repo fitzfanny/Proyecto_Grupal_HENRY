@@ -32,36 +32,37 @@ default_args = {
 def gd_to_gcs():
     
     create_bucket = GCSCreateBucketOperator(
-        task_id = 
+        task_id = 'create_bucket',
 		bucket_name = MY_BUCKET_NAME,
 		location = 'us-east1',
 		project_id = HENRY_PROJECT,
 		gcp_conn_id= GCPCONN
 		)
 
-	MY_FOLDER_ID = '1TI-SsMnZsNP6t930olEEWbBQdo_yuIZF' # Folder de Yelp
-
 	# Carga de datos Yelp
+	MY_FOLDER_ID = '1TI-SsMnZsNP6t930olEEWbBQdo_yuIZF' # Folder de Yelp
 	for MY_FILE_NAME in ['user.parquet','tip.json','review.json','business.pkl']:
 		extract_load_yelp = GoogleDriveToGCSOperator(
+        	task_id = 'extract_load_yelp',
 			bucket_name=MY_BUCKET_NAME,
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
 			drive_id="None",
-			gcp_conn_id=GCPCONN,
+			gcp_conn_id=GCPCONN
 			)
 
 	# Cargar datos de Maps Metadata
 	MY_FOLDER_ID = '1olnuKLjT8W2QnCUUwh8uDuTTKVZyxQ0Z'
 	for MY_FILE_NAME in range(1,12):
 		extract_load_maps_meta = GoogleDriveToGCSOperator(
+			task_id = 'extract_load_maps_meta',
 			bucket_name=MY_BUCKET_NAME,
 			object_name=f'metadata_{MY_FILE_NAME}.json',
 			file_name=f'{MY_FILE_NAME}.json',
 			folder_id=MY_FOLDER_ID,
 			drive_id="None",
-			gcp_conn_id=GCPCONN,
+			gcp_conn_id=GCPCONN
 			)
 
 	# Cargar datos de Maps Estados
@@ -72,56 +73,63 @@ def gd_to_gcs():
 		if OBJECT_NAME == 'review-New_York':
 			for MY_FILE_NAME in range(1,19):
 				extract_load_maps_newyork = GoogleDriveToGCSOperator(
+					task_id = 'extract_load_maps_newyork',
 					bucket_name=MY_BUCKET_NAME,
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id="None",
-					gcp_conn_id=GCPCONN,
+					gcp_conn_id=GCPCONN
 					)
 
 		if OBJECT_NAME == 'review-California':
 			for MY_FILE_NAME in range(1,19):
 				extract_load_maps_california = GoogleDriveToGCSOperator(
+					task_id = 'extract_load_maps_california',
 					bucket_name=MY_BUCKET_NAME,
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id="None",
-					gcp_conn_id=GCPCONN,
+					gcp_conn_id=GCPCONN
 					)
 
 		if OBJECT_NAME == 'review-Texas':
 			for MY_FILE_NAME in range(1,17):
 				extract_load_maps_texas = GoogleDriveToGCSOperator(
+					task_id = 'extract_load_maps_texas',
 					bucket_name=MY_BUCKET_NAME,
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id="None",
-					gcp_conn_id=GCPCONN,
+					gcp_conn_id=GCPCONN
 					)
 
 		if OBJECT_NAME == 'review-Colorado':
 			for MY_FILE_NAME in range(1,17):
 				extract_load_maps_colorado = GoogleDriveToGCSOperator(
+					task_id = 'extract_load_maps_colorado',
 					bucket_name=MY_BUCKET_NAME,
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id="None",
-					gcp_conn_id=GCPCONN,
+					gcp_conn_id=GCPCONN
 					)
 
 		if OBJECT_NAME == 'review-Georgia':
 			for MY_FILE_NAME in range(1,14):
 				extract_load_maps_georgia = GoogleDriveToGCSOperator(
+        			task_id = 'extract_load_maps_georgia',
 					bucket_name=MY_BUCKET_NAME,
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id="None",
-					gcp_conn_id=GCPCONN,
+					gcp_conn_id=GCPCONN
 					)
+    
+    
 
 dag = gd_to_gcs()
