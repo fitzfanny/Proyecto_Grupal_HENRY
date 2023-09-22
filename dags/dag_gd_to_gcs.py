@@ -32,7 +32,7 @@ def gd_to_gcs():
 
 	delete_bucket = GCSDeleteBucketOperator(
 		task_id = 'create_bucket',
-		force = True
+		force = True,
 		bucket_name = MY_BUCKET_NAME,
 		gcp_conn_id = GCPCONN
 	)
