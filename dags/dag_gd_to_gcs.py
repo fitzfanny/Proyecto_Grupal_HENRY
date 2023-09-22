@@ -59,7 +59,7 @@ def gd_to_gcs():
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba1',
 		file_name='Temas emergentes.docx',
-		folder_id='1e64U0vIwXDw3mvz0M340btILvCPDHMgw',
+		folder_id='/my-drive/Tradingbot',
 		# drive_id=MY_FOLDER_ID,
 		gcp_conn_id=GCPCONN
 	)
@@ -69,8 +69,8 @@ def gd_to_gcs():
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba2',
 		file_name='Sprint_1.docx',
-		folder_id='1p4WLELHuHfRwr540i3sm6HbMDlS56FSm',
-		drive_id='1p4WLELHuHfRwr540i3sm6HbMDlS56FSm',
+		folder_id='/shared-with-me/Sprint_1',
+		drive_id='/shared-with-me/Sprint_1',
 		gcp_conn_id=GCPCONN
 	)
 
