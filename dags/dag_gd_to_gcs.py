@@ -58,8 +58,8 @@ def gd_to_gcs():
 		task_id = 'prueba1',
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba1',
-		file_name=r'Temas emergentes.docx',
-		folder_id='/my-drive/Tradingbot',
+		file_name='prueba',
+		folder_id='1y1XFty1aIIvAix3F8qpJMqnC_YiTIXyP',
 		# drive_id=MY_FOLDER_ID,
 		gcp_conn_id=GCPCONN
 	)
