@@ -5,6 +5,14 @@ from datetime import datetime
 from airflow.providers.google.cloud.transfers.gdrive_to_gcs import GoogleDriveToGCSOperator
 from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator, GCSDeleteBucketOperator
 
+from google.oauth2 import service_account
+
+SCOPES = ['https://www.googleapis.com/auth/sqlservice.admin']
+SERVICE_ACCOUNT_FILE = '/path/to/service.json'
+
+credentials = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
 
 GCPCONN = "google_cloud_henry"
 MY_BUCKET_NAME = 'data-lake-henry'
