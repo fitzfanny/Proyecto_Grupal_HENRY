@@ -63,6 +63,7 @@ def gd_to_gcs():
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
+			drive_id=MY_FOLDER_ID
 			gcp_conn_id=GCPCONN
 		)
 
