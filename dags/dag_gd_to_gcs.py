@@ -6,8 +6,7 @@ from airflow.providers.google.cloud.transfers.gdrive_to_gcs import GoogleDriveTo
 from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
 
 
-CREDENTIALS_FILE = '../Credentials/fiery-protocol-399500-d5690a50fe03.json'
-GCPCONN = "google_cloud_default"
+GCPCONN = "google_cloud_henry"
 MY_BUCKET_NAME = 'data-lake'
 HENRY_PROJECT = 'fiery-protocol-399500'
 
