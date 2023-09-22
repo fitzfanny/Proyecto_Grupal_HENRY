@@ -49,7 +49,8 @@ def gd_to_gcs():
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
 			drive_id=MY_FOLDER_ID,
-			gcp_conn_id=GCPCONN
+			gcp_conn_id=GCPCONN,
+			impersonation_chain='tinmar96@gmail.com'
 		)
 
 	# Cargar datos de Maps Metadata
@@ -62,7 +63,8 @@ def gd_to_gcs():
 			file_name=f'{MY_FILE_NAME}.json',
 			folder_id=MY_FOLDER_ID,
 			drive_id=MY_FOLDER_ID,
-			gcp_conn_id=GCPCONN
+			gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 		)
 
 	# Cargar datos de Maps Estados
@@ -76,7 +78,8 @@ def gd_to_gcs():
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id=MY_FOLDER_ID,
-					gcp_conn_id=GCPCONN
+					gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 				)
 
 		if OBJECT_NAME == 'review-California':
@@ -88,7 +91,8 @@ def gd_to_gcs():
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id=MY_FOLDER_ID,
-					gcp_conn_id=GCPCONN
+					gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 				)
 
 		if OBJECT_NAME == 'review-Texas':
@@ -100,7 +104,8 @@ def gd_to_gcs():
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id=MY_FOLDER_ID,
-					gcp_conn_id=GCPCONN
+					gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 					)
 
 		if OBJECT_NAME == 'review-Colorado':
@@ -112,7 +117,8 @@ def gd_to_gcs():
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id=MY_FOLDER_ID,
-					gcp_conn_id=GCPCONN
+					gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 				)
 
 		if OBJECT_NAME == 'review-Georgia':
@@ -124,7 +130,8 @@ def gd_to_gcs():
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
 					drive_id=MY_FOLDER_ID,
-					gcp_conn_id=GCPCONN
+					gcp_conn_id=GCPCONN,
+					impersonation_chain='tinmar96@gmail.com'
 				)
 
 	create_bucket >> extract_load_yelp >> extract_load_maps_meta >> extract_load_maps_newyork >> extract_load_maps_california >> extract_load_maps_texas >> extract_load_maps_colorado >> extract_load_maps_georgia
