@@ -3,8 +3,7 @@ from airflow.decorators import dag
 from datetime import datetime
 
 from airflow.providers.google.cloud.transfers.gdrive_to_gcs import GoogleDriveToGCSOperator
-from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
-from airflow.providers.google.cloud.operators.gcs import GCSDeleteBucketOperator
+from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator, GCSDeleteBucketOperator
 
 
 GCPCONN = "google_cloud_henry"
