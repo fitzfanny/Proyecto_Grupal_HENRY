@@ -59,7 +59,7 @@ def gd_to_gcs():
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba1',
 		file_name='prueba',
-		folder_id='1y1XFty1aIIvAix3F8qpJMqnC_YiTIXyP',
+		folder_id='/my-drive',
 		# drive_id=MY_FOLDER_ID,
 		gcp_conn_id=GCPCONN
 	)
@@ -69,7 +69,7 @@ def gd_to_gcs():
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba2',
 		file_name='prueba',
-		folder_id='1fqKwBBLdxC1CdoFW68NQihrVziiL3EYY',
+		folder_id='/talent/prueba',
 		drive_id='0AOid89EWziepUk9PVA',
 		gcp_conn_id=GCPCONN
 	)
