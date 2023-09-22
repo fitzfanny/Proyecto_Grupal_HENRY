@@ -43,7 +43,7 @@ def gd_to_gcs():
 	MY_FOLDER_ID = '1TI-SsMnZsNP6t930olEEWbBQdo_yuIZF' # Folder de Yelp
 	for MY_FILE_NAME in ['user.parquet','tip.json','review.json','business.pkl']:
 		extract_load_yelp = GoogleDriveToGCSOperator(
-        	task_id = 'extract_load_yelp',
+			task_id = 'extract_load_yelp',
 			bucket_name=MY_BUCKET_NAME,
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
@@ -66,10 +66,7 @@ def gd_to_gcs():
 			)
 
 	# Cargar datos de Maps Estados
-
-	for OBJECT_NAME,MY_FOLDER_ID in zip(['review-New_York','review-California','review-Texas','review-Colorado','review-Georgia'],
-                            	['18HYLDXcKg-cC1CT9vkRUCgea04cNpV33','1Jrbjt-0hnLCvecfrnMwGu1jYZSxElJll','1zq12pojMW2zeGgts0lHFSf_pF1L_4UWr','1IlUZJZxOyRiIWo3G6BqW1Thu2kXYKMFX','1MuPznes6CebS6gyWPVU-kR4EVKKLY4l3']):
-		
+	for OBJECT_NAME,MY_FOLDER_ID in zip(['review-New_York','review-California','review-Texas','review-Colorado','review-Georgia'],['18HYLDXcKg-cC1CT9vkRUCgea04cNpV33','1Jrbjt-0hnLCvecfrnMwGu1jYZSxElJll','1zq12pojMW2zeGgts0lHFSf_pF1L_4UWr','1IlUZJZxOyRiIWo3G6BqW1Thu2kXYKMFX','1MuPznes6CebS6gyWPVU-kR4EVKKLY4l3']):
 		if OBJECT_NAME == 'review-New_York':
 			for MY_FILE_NAME in range(1,19):
 				extract_load_maps_newyork = GoogleDriveToGCSOperator(
