@@ -38,7 +38,7 @@ def gd_to_gcs():
 	)
 
 	create_bucket = GCSCreateBucketOperator(
-		task_id = 'create_bucket',
+		task_id = 'delete_bucket',
 		bucket_name = MY_BUCKET_NAME,
 		location = 'us-east1',
 		project_id = HENRY_PROJECT,
@@ -134,6 +134,6 @@ def gd_to_gcs():
 					gcp_conn_id=GCPCONN
 				)
 
-	create_bucket >> extract_load_yelp >> extract_load_maps_meta >> extract_load_maps_newyork >> extract_load_maps_california >> extract_load_maps_texas >> extract_load_maps_colorado >> extract_load_maps_georgia
+	delete_bucket >> create_bucket >> extract_load_yelp >> extract_load_maps_meta >> extract_load_maps_newyork >> extract_load_maps_california >> extract_load_maps_texas >> extract_load_maps_colorado >> extract_load_maps_georgia
 
 dag = gd_to_gcs()
