@@ -54,6 +54,26 @@ def gd_to_gcs():
 		gcp_conn_id = GCPCONN
 	)
 
+	prueba1 = GoogleDriveToGCSOperator(
+		task_id = f'prueba1',
+		bucket_name=MY_BUCKET_NAME,
+		object_name='prueba1',
+		file_name='Temas emergentes.docx',
+		folder_id='1e64U0vIwXDw3mvz0M340btILvCPDHMgw',
+		# drive_id=MY_FOLDER_ID,
+		gcp_conn_id=GCPCONN
+	)
+
+	prueba2 = GoogleDriveToGCSOperator(
+		task_id = f'prueba2',
+		bucket_name=MY_BUCKET_NAME,
+		object_name='prueba2',
+		file_name='Sprint_1.docx',
+		folder_id='1p4WLELHuHfRwr540i3sm6HbMDlS56FSm',
+		drive_id='1p4WLELHuHfRwr540i3sm6HbMDlS56FSm',
+		gcp_conn_id=GCPCONN
+	)
+
 	# Carga de datos Yelp
 	MY_FOLDER_ID = '1TI-SsMnZsNP6t930olEEWbBQdo_yuIZF' # Folder de Yelp
 	for MY_FILE_NAME in ['user.parquet','tip.json','review.json','business.pkl']:
@@ -63,7 +83,7 @@ def gd_to_gcs():
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
-			drive_id=MY_FOLDER_ID
+			drive_id=MY_FOLDER_ID,
 			gcp_conn_id=GCPCONN
 		)
 
