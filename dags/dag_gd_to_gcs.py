@@ -7,7 +7,7 @@ from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
 
 
 GCPCONN = "google_cloud_henry"
-MY_BUCKET_NAME = 'data-lake'
+MY_BUCKET_NAME = 'data-lake-henry'
 HENRY_PROJECT = 'fiery-protocol-399500'
 
 
