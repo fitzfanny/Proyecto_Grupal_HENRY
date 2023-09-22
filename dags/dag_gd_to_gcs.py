@@ -48,7 +48,7 @@ def gd_to_gcs():
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
-			drive_id="None",
+			drive_id=MY_FOLDER_ID,
 			gcp_conn_id=GCPCONN
 		)
 
@@ -61,7 +61,7 @@ def gd_to_gcs():
 			object_name=f'metadata_{MY_FILE_NAME}.json',
 			file_name=f'{MY_FILE_NAME}.json',
 			folder_id=MY_FOLDER_ID,
-			drive_id="None",
+			drive_id=MY_FOLDER_ID,
 			gcp_conn_id=GCPCONN
 		)
 
@@ -75,7 +75,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id="None",
+					drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -87,7 +87,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id="None",
+					drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -99,7 +99,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id="None",
+					drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 					)
 
@@ -111,7 +111,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id="None",
+					drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -123,7 +123,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id="None",
+					drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
