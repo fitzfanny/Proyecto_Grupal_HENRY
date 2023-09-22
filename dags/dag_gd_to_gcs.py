@@ -8,7 +8,7 @@ from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
 from google.oauth2 import service_account
 
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly','https://www.googleapis.com/auth/devstorage.full_control	']
-SERVICE_ACCOUNT_FILE = '/c/Users/tinma/OneDrive/Escritorio/HENRY/Proyecto_Grupal_HENRY/credentials/fiery-protocol-399500-f2566dd92ef4.json'
+SERVICE_ACCOUNT_FILE = 'c/Users/tinma/OneDrive/Escritorio/HENRY/Proyecto_Grupal_HENRY/credentials/fiery-protocol-399500-f2566dd92ef4.json'
 
 credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -63,7 +63,6 @@ def gd_to_gcs():
 			object_name=MY_FILE_NAME,
 			file_name=MY_FILE_NAME,
 			folder_id=MY_FOLDER_ID,
-			drive_id='None',
 			gcp_conn_id=GCPCONN
 		)
 
@@ -76,7 +75,7 @@ def gd_to_gcs():
 			object_name=f'metadata_{MY_FILE_NAME}.json',
 			file_name=f'{MY_FILE_NAME}.json',
 			folder_id=MY_FOLDER_ID,
-			drive_id=MY_FOLDER_ID,
+			# drive_id=MY_FOLDER_ID,
 			gcp_conn_id=GCPCONN
 		)
 
@@ -90,7 +89,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id=MY_FOLDER_ID,
+					# drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -102,7 +101,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id=MY_FOLDER_ID,
+					# drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -114,7 +113,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id=MY_FOLDER_ID,
+					# drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 					)
 
@@ -126,7 +125,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id=MY_FOLDER_ID,
+					# drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
@@ -138,7 +137,7 @@ def gd_to_gcs():
 					object_name=f'{OBJECT_NAME[7:]}_{MY_FILE_NAME}.json',
 					file_name=f'{MY_FILE_NAME}.json',
 					folder_id=MY_FOLDER_ID,
-					drive_id=MY_FOLDER_ID,
+					# drive_id=MY_FOLDER_ID,
 					gcp_conn_id=GCPCONN
 				)
 
