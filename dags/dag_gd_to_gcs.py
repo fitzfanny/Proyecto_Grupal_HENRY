@@ -23,7 +23,7 @@ default_args = {
 	'gd_to_gcs',
 	default_args=default_args,
 	catchup=False,
-	schedule_interval=None,
+	schedule=None,
 	tags=['HENRY','Proyecto Final','Proyecto en Equipo']
 	)
 
@@ -35,6 +35,7 @@ def gd_to_gcs():
 		bucket_name = MY_BUCKET_NAME,
 		location = 'us-east1',
 		project_id = HENRY_PROJECT,
+		storage_class = 'STANDARD',
 		gcp_conn_id = GCPCONN
 	)
 
