@@ -55,22 +55,22 @@ def gd_to_gcs():
 	)
 
 	prueba1 = GoogleDriveToGCSOperator(
-		task_id = f'prueba1',
+		task_id = 'prueba1',
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba1',
-		file_name='Temas emergentes.docx',
+		file_name=r'Temas emergentes.docx',
 		folder_id='/my-drive/Tradingbot',
 		# drive_id=MY_FOLDER_ID,
 		gcp_conn_id=GCPCONN
 	)
 
 	prueba2 = GoogleDriveToGCSOperator(
-		task_id = f'prueba2',
+		task_id = 'prueba2',
 		bucket_name=MY_BUCKET_NAME,
 		object_name='prueba2',
-		file_name='Sprint_1.docx',
-		folder_id='/shared-with-me/Sprint_1',
-		drive_id='/shared-with-me/Sprint_1',
+		file_name='prueba',
+		folder_id='1fqKwBBLdxC1CdoFW68NQihrVziiL3EYY',
+		drive_id='0AOid89EWziepUk9PVA',
 		gcp_conn_id=GCPCONN
 	)
 
@@ -162,6 +162,6 @@ def gd_to_gcs():
 					gcp_conn_id=GCPCONN
 				)
 
-	delete_bucket >> create_bucket >> extract_load_yelp >> extract_load_maps_meta >> extract_load_maps_newyork >> extract_load_maps_california >> extract_load_maps_texas >> extract_load_maps_colorado >> extract_load_maps_georgia
+	delete_bucket >> create_bucket >> [prueba1,prueba2] >> extract_load_yelp >> extract_load_maps_meta >> extract_load_maps_newyork >> extract_load_maps_california >> extract_load_maps_texas >> extract_load_maps_colorado >> extract_load_maps_georgia
 
 dag = gd_to_gcs()
