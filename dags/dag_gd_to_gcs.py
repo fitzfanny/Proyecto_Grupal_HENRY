@@ -31,14 +31,14 @@ default_args = {
 def gd_to_gcs():
 
 	delete_bucket = GCSDeleteBucketOperator(
-		task_id = 'create_bucket',
+		task_id = 'delete_bucket',
 		force = True,
 		bucket_name = MY_BUCKET_NAME,
 		gcp_conn_id = GCPCONN
 	)
 
 	create_bucket = GCSCreateBucketOperator(
-		task_id = 'delete_bucket',
+		task_id = 'create_bucket',
 		bucket_name = MY_BUCKET_NAME,
 		location = 'us-east1',
 		project_id = HENRY_PROJECT,
